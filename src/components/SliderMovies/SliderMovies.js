@@ -2,17 +2,17 @@ import React from 'react';
 import { Carousel, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { urlImg } from '../../utils/contants';
+import Loading from "../Loading";
 import './SliderMovies.scss';
 
 export default function SliderMovies(props){
-  const { movies }= props;
-
+  const { movies } = props;
+ 
   if (movies.loanding || !movies.result) {
-    return 'Loanding ...';
+    return <Loading />;
   }
 
-  const { results } = movies.result
-  console.log(results);
+  const { results } = movies.result;
 
   return(
     <Carousel autoplay className="SliderMovies">
@@ -34,9 +34,9 @@ function Movie(props){
   return (
     <div
       className="SliderMoviesMovie"
-      style={{ backgroundImage: `url(${backdropPath})`}}
+      style={{ backgroundImage: `url('${backdropPath}')`}}
     >
-      <div className="SliderMoviesMovieInfo">
+      <div className="SliderMoviesMovie-Info">
         <div>
           <h2>{title}</h2>
           <p>{overview}</p>
