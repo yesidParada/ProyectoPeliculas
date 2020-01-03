@@ -16,7 +16,7 @@ export default function App() {
   return (
     <Layout>
       <Router>
-        <Header className="men">
+        <Header className="men" style={{ zIndex: 1 }}>
           <MenuTop />
         </Header>
         <Content>
