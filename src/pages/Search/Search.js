@@ -36,22 +36,26 @@ function Search(props){
   }
   
   return(
-    <Row >
-      <Col span={12} offset={6} className="Search">
-        <h1>Buscar Peliculas</h1>
-        <Input value={searchValue} onChange={onChangeSearch}/>
-      </Col>
-      {movieList.results && (
-        <Row>
-          <Col span={24}>
-            <MovieCatalog movies={movieList} />
-          </Col>
-        </Row>
-      )}
-      <Col span={24}>
-        <Footer/>
-      </Col>
-    </Row>
+    <>
+      <Row justify="center">
+        <Col span={12} offset={6} className="Search">
+          <h2>Buscar Peliculas</h2>
+          <Input value={searchValue} onChange={onChangeSearch}/>
+        </Col>
+      </Row>
+      <Row justify="center">
+        {movieList.results && (
+          <Row>
+            <Col span={24}>
+              <MovieCatalog movies={movieList} />
+            </Col>
+          </Row>
+        )}
+        <Col span={24}>
+          <Footer/>
+        </Col>
+      </Row>
+    </>
   );
 }
 
