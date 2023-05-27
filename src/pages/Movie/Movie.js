@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Row, Col, Button, Rate } from 'antd';
 import { useParams } from 'react-router-dom';
-import moment from 'moment';
+// import moment from 'moment';
 import useFetch from '../../hooks/useFetch';
 import { url, key, lng, urlImg } from '../../utils/contants';
 import Loading from '../../components/Loading';
@@ -98,7 +98,7 @@ function MovieInfo(props){
       <div className="MovieInfoHeader">
         <h1>
           {title} 
-          <span>{moment(release_date, "YYYY-MM-DD").format("YYYY")}</span>
+          {/* <span>{moment(release_date, "YYYY-MM-DD").format("YYYY")}</span> */}
         </h1>
         {renderVideo()}
       </div>

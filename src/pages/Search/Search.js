@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Input } from 'antd';
-import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
 import MovieCatalog from '../../components/MovieCatalog';
 import Footer from '../../components/Footer';
@@ -59,4 +58,4 @@ function Search(props){
   );
 }
 
-export default withRouter(Search);
+export default Search;

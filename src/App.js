@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Router, Routes , Route } from 'react-router-dom';
 import MenuTop from './components/MenuTop';
 
 // Pages
@@ -20,26 +20,20 @@ export default function App() {
           <MenuTop />
         </Header>
         <Content>
-          <Switch>
-            <Route path="/" exact={true}>
-              <Home/>
+          <Routes >
+            <Route path="/" component={Home} exact={true}>
             </Route>
-            <Route path="/new-movie" exact={true}>
-              <NewMovie/>
+            <Route path="/new-movie" component={NewMovie} exact={true}>
             </Route>
-            <Route path="/popular" exact={true}>
-              <Popular/>
+            <Route path="/popular" component={Popular} exact={true}>
             </Route>
-            <Route path="/search" exact={true}>
-              <Search/>
+            <Route path="/search" component={Search} exact={true}>
             </Route>
-            <Route path="/movie/:id" exact={true}>
-              <Movie/>
+            <Route path="/movie/:id" component={Movie} exact={true}>
             </Route>
-            <Route path="*">
-              <Error404/>
+            <Route path="*" component={Error404}>
             </Route>
-          </Switch>
+          </Routes >
         </Content>
       </Router>
     </Layout>
